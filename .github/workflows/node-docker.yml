@@ -27,7 +27,6 @@ jobs:
 
       - name: Build Docker Image
         run: docker build -t saurabh106/node_app_project:${{ github.run_number }} .
-        # If Dockerfile is NOT at root, adjust with: -f path/to/Dockerfile
 
       - name: Push Docker Image (Simulated)
         run: echo "Skipping Docker push. Docker image saurabh106/node_app_project:${{ github.run_number }} would be pushed here."
