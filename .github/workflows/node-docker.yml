@@ -12,6 +12,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Debug - List All Files
+        run: |
+          echo "Current directory contents:"
+          find . -type f
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -21,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Build Docker Image
-        run: docker build -t saurabh106/node_app_project:${{ github.run_number }} -f Dockerfile .
+        run: docker build -t saurabh106/node_app_project:${{ github.run_number }} .
 
       - name: Push Docker Image (Simulated)
         run: echo "Skipping Docker push. Docker image saurabh106/node_app_project:${{ github.run_number }} would be pushed here."
