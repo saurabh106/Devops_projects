@@ -12,11 +12,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Debug – List All Files
-        run: |
-          echo "📁 Current directory structure:"
-          find . -type f
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
