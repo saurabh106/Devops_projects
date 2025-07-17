@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-               
                 git branch: 'main', url: 'https://github.com/saurabh106/Devops_projects.git'
             }
         }
@@ -28,7 +27,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}")
+                    docker.build("${DOCKER_IMAGE}", "-f DockerFile .")
                 }
             }
         }
