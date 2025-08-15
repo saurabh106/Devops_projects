@@ -1,1 +1,14 @@
+# Node.js
 node_modules/
+
+# Terraform
+.tfstate
+.tfstate.*
+.terraform/  # <-- ignore this directory
+*.tfvars
+*.backup
+crash.log
+
+# Terraform keys
+tf/terra-key  # private key, DO NOT push
+tf/terra-key.pub  # optional: only ignore if needed
